@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠迷注册</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ’头部导航栏 -->
+    <div id="title">
+        <div id="nav">
+            <!-- 头部logo -->
+            <div id="logo">
+                <img src="images/5.png" alt="">
+                <p>Welcome to Mouse's Fans Page!</p>
+                
+            </div>
+            <!-- 头部导航栏 -->
+            <div id="nav_title">
+                <div class="a1">
+                    <img src="images/sky3.png" height="600" width="1200"/>
+                </div>
+                <div class="b2">
+                    <ul class="nav-menu">
+                        <li><a href="introduction.html" id="intro-link">简介</a></li>
+                        <li><a href="movies.html" id="movies-link">著名作品</a></li>
+                        <li><a href="photo.html" id="photo-link">鼠鼠美图</a></li>
+                        <li class="active"><a href="message.html" id="message-link">鼠迷寄语</a></li>
+                    </ul>
+                </div>
+            </div>         
+            </div>
+
+    <!-- 滚动条 -->
+    <div
+    style=" overflow-x:auto;overflow-y:auto; background: #EEEEEE;">
+    </div>
+    <script src="script.js"></script>
+    <div id="register-container">
+        
+        <div class="register-box">
+            <h1>鼠迷注册</h1>
+            <form action="#" method="POST">
+                <div class="input-container">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" placeholder="请输入邮箱" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                <button type="submit" class="submit-btn">注册</button>
+            </form>
+            <div class="footer">
+                <p>已经有账户了？<a href="login.html">去登录</a></p>
+            </div>
+        </div>
+        <div class="mouse-graphic">
+            <img src="images/20.png" alt="Cute Mouse" class="mouse-img">
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>Fans' message Page</title>
+</head>
+
+<body>
+
+    <!-- ’头部导航栏 -->
+    <div id="title">
+        <div id="nav">
+            <!-- 头部logo -->
+            <div id="logo">
+                <img src="images/5.png" alt="">
+                <p>Welcome to Mouse's Fans Page!</p>
+                
+            </div>
+            <!-- 头部导航栏 -->
+            <div id="nav_title">
+                <div class="a1">
+                    <img src="images/sky3.png" height="600" width="1200"/>
+                </div>
+                <div class="b2">
+                    <ul class="nav-menu">
+                        <li><a href="introduction.html" id="intro-link">简介</a></li>
+                        <li><a href="movies.html" id="movies-link">著名作品</a></li>
+                        <li><a href="photo.html" id="photo-link">鼠鼠美图</a></li>
+                        <li class="active"><a href="message.html" id="message-link">鼠迷寄语</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+                
+            </div>
+
+    <!-- 滚动条 -->
+    <div
+    style=" overflow-x:auto;overflow-y:auto; background: #EEEEEE;">
+    </div>
+    <script src="script.js"></script>
+   
+    <!-- 页面头部 -->
+    <header>
+        <div class="header-container">
+            <h1>粉丝留言板</h1>
+            <p>欢迎留下您的宝贵意见或祝福</p>
+            <img src="images/11.png" alt="粉丝图片" class="hero-image"/>
+        </div>
+    </header>
+
+    <!-- 留言表单 -->
+    <div class="message-container">
+        <h2>留言您的想法</h2>
+        <form action="#" method="POST" id="message-form">
+            <label for="username">您的名字：</label>
+            <input type="text" id="username" name="username" placeholder="请输入您的名字" required>
+
+            <label for="message">留言内容：</label>
+            <textarea id="message" name="message" rows="5" placeholder="请输入留言内容" required></textarea>
+
+            <button type="submit" class="submit-button">提交留言</button>
+        </form>
+    </div>
+
+    <!-- 留言显示区 -->
+    <div class="messages-list">
+        <h3>已收到的留言：</h3>
+        <ul id="message-list">
+        
+        </ul>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div id="logo2">
+                qian
+            </div>
+            <div id="banquan">
+                <a href="index.html">首页</a>
+                <a href="">简介</a>
+                版权所有@qian
+            </div>
+            <div id="time" class="showTime">
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

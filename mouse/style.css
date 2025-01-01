@@ -1,0 +1,947 @@
+html {
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    background-color: #dbefff;
+}
+
+.photo-body,.message-body,.introduction-body,.movies-body {
+	margin: 0;
+	padding:0;
+	font-family: Tahoma, "Trebuchet MS", Verdana;
+	font-size: 15px;
+	line-height: 1.5em;
+	width: 100%;
+	display: table;
+}
+
+/* 设置父容器 #header 为 flex 布局 */
+#header {
+    display: flex;              /* 启用 Flexbox 布局 */
+    justify-content: space-between;  /* 元素之间分布，左对齐和右对齐 */
+    align-items: center;        /* 垂直方向居中对齐 */
+    padding: 10px 20px;         /* 给容器添加一些内边距 */
+}
+
+/*logo*/
+#logo {
+    display: flex;
+    align-items: center;
+    /* 可根据需要添加间距 */
+    gap: 10px; 
+}
+#logo p {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold; /* 添加这一行来使字体加粗 */
+    color: #0d0b5a;
+    padding-left: 40px;
+    background-size: auto;
+}
+#logo img {
+    width: 60px;
+    height: 60px;
+    margin-top: 0px;
+    margin-left: 20px;
+}  
+
+/* 给ul容器设置水平排列 */
+.nav-menu {
+    list-style-type: none; /* 去掉默认的列表样式 */
+    padding: 0; /* 去掉内边距 */
+    margin: 0; /* 去掉外边距 */
+    display: flex; /* 使用flex布局来水平排列 */
+    justify-content: center; /* 将列表项居中 */
+}
+
+.nav-menu li {
+    margin: 0 20px; /* 每个导航项之间加点水平间距 */
+}
+
+.nav-menu li a {
+    text-decoration: none; /* 去掉链接的下划线 */
+    color: #000; /* 设置链接文字颜色 */
+    font-size: 30px; /* 设置字体大小 */
+    font-weight: bold; /* 设置文字加粗 */
+}
+
+.nav-menu li a.active {
+    color: #8b26b3; /* 高亮颜色，例如红色 */
+    font-weight: bold; /* 加粗字体 */
+    border-bottom: 2px solid #8b26b3; /* 底部边框 */
+}
+
+/* 让导航栏与图片分隔开 */
+.a1 {
+    text-align: center;
+    margin-bottom: 10px; /* 图片和导航条之间添加一些空隙 */
+}
+/* 首页、影视作品、明星美图等导航项的悬停效果 */
+.nav-menu li a:hover {
+    background-color: #787aec; /* 悬停时背景颜色 */
+    color: white; /* 悬停时文字颜色变为白色，确保对比度 */
+    border-radius: 4px; /* 圆角效果 */
+    padding: 5px 10px; /* 保持一致的内边距 */
+}
+
+
+    /* 控制导航链接的间距 */
+#nav_title a{
+    margin: 0 15px;             /* 设置每个链接之间的左右间距 */
+}
+
+/*搜索栏*/
+#nav_right{
+    display: flex;          /* 使用 Flexbox 布局 */
+    align-items: center;    /* 垂直居中 */
+    justify-content: flex-end; /* 将内容靠右对齐 */
+    color: #000;
+    width: 80%;   /* 确保容器占满父级宽度 */
+    margin-left: 200px; /* 右边距 */
+
+}
+
+.nav-link {
+    text-decoration: none;  /* 去掉链接的下划线 */
+    color: #09213a;         /* 链接的颜色 */
+    font-size: 25px;        /* 字体大小 */
+    margin-left: 30px;      /* 链接之间的间距 */
+    padding: 10px 20px;     /* 链接的内边距 */
+    border-radius: 4px;     /* 圆角效果 */
+
+    transition: background-color 0.3s; /* 平滑过渡效果 */
+}
+
+.nav-link:hover {
+    background-color: #787aec; /* 悬停时背景颜色 */
+}
+
+
+/* 搜索栏 */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* 输入框 */
+.search-input {
+    width: 1700px; /* 增加输入框的宽度 */
+    padding: 12px 20px;
+    font-size: 25px;
+    border-radius: 30px;
+
+    border: 2px solid #787aec;
+    outline: none;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(120, 122, 250, 0.3); /* 输入框的阴影效果 */
+}
+
+/* 输入框聚焦时的效果 */
+.search-input:focus {
+    border-color: #6b66cc;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(107, 102, 204, 0.5); /* 聚焦时阴影更明显 */
+}
+
+/* 输入框的提示文字 */
+.search-input::placeholder {
+    color: #787aec;
+    font-style: italic;
+    transition: all 0.3s ease; /* 提示文字平滑过渡 */
+}
+
+/* 提交按钮 */
+.search-button {    
+    display: flex;
+    background: linear-gradient(135deg, #787aec, #6b66cc); /* 渐变背景 */
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(120, 122, 250, 0.4); /* 按钮阴影效果 */
+
+}
+
+/* 按钮悬停效果 */
+.search-button:hover {
+    background-color: #6b66cc;
+    transform: scale(1.1); /* 鼠标悬停时按钮放大 */
+    box-shadow: 0 0 25px rgba(107, 102, 204, 0.7); /* 鼠标悬停时按钮的阴影效果 */
+}
+
+/* 鼠标图标 */
+.search-button::after {
+    content: '🐭'; /* 可爱的鼠标图标 */
+    font-size: 25px;
+    transition: transform 0.3s ease;
+}
+
+/* 鼠标悬停时的按钮效果 */
+.search-container:hover .search-button {
+    background-color: #6b66cc;
+    transform: scale(1.1); /* 鼠标悬停时放大按钮 */
+    transition: all 0.3s ease;
+}
+
+  
+/*名言*/
+#mingyan {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#mingyan p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #140569;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards, mouseEffect 2s infinite;
+}
+
+#mingyan p:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#mingyan p:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#mingyan p:nth-child(3) {
+    animation-delay: 1s;
+}
+
+#mingyan p:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+#mingyan p:nth-child(5) {
+    animation-delay: 2s;
+}
+
+#mingyan:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes mouseEffect {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    50% {
+        transform: translateX(10px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-10px) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+
+
+/* 轮播照片 */
+#photos{
+    width: 650px;
+    height: 600px;
+    align-items: center;
+    margin: 0% auto;
+    margin-top: 0%;
+  }
+  .re{
+    position: relative;
+    height: 400px;
+  }
+  .re ul{
+    list-style-type:none ;
+  }
+  .re ul>li{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+  
+    transition: 1s;
+    opacity: 0;
+  }
+  .re ul>li img{
+    width: 700px;
+    height: 500px;
+    border-radius: 10%;
+    border: 15px solid #fcef7b;
+  }
+  /* 轮播图的图标 */
+  #photos ol {      
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5,75px);
+    grid-template-rows: auto;
+    grid-gap: 1em;gap: 1em;
+    float: right;
+    margin-top: 550px;
+    list-style: none;
+    top:0;left:0;
+  }
+  #photos ol li {
+    width: 25px;
+    height: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    float: left;
+    text-align: center;
+    border-radius: 2em;
+    border: 5px solid #999999;
+  }
+  
+
+/* 简介开始 */
+#main_title h2 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-left: 20px solid #4F9CEE;
+    padding-left: 20px;
+}
+
+#main_title h2 span {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #838384;
+}
+
+#main_title img {
+    display: inline-block;
+    float: none;
+    width: 20%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#main_title h3 {
+    border-left: 20px solid #4F9CEE;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+
+/* 表格 */
+/* 表格容器 */
+#main_title table {
+    width: 100%;                 /* 设置表格宽度为100%，让它适应容器 */
+    max-width: 1800px;           /* 限制表格的最大宽度 */
+    margin: 20px auto;           /* 设置表格的外边距，使其居中显示 */
+    border-collapse: collapse;   /* 合并表格边框 */
+    line-height: 30px;           /* 设置行高 */
+    font-size: 20px;             /* 设置字体大小 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 为表格添加阴影，增加层次感 */
+}
+
+/* 表格的表头 */
+#main_title table th {
+    background-color: #f7f7f7;   /* 背景色 */
+    color: #333;                  /* 字体颜色 */
+    font-weight: bold;            /* 字体加粗 */
+    padding: 10px 15px;           /* 添加内边距，提升可读性 */
+    text-align: left;             /* 左对齐 */
+    border-bottom: 2px solid #ccc; /* 表头下方的边框 */
+}
+
+/* 表格的内容行 */
+#main_title table td {
+    padding: 10px 15px;           /* 添加内边距 */
+    text-align: left;             /* 左对齐 */
+    border-bottom: 1px dashed #ccc; /* 行底部的虚线边框 */
+}
+
+/* 偶数列的样式 */
+#main_title table tr td:nth-child(2n) {
+    background-color: #f9f9f9;    /* 偶数列的背景色 */
+}
+
+/* 奇数列文字颜色 */
+#main_title table tr td:nth-child(2n-1) {
+    color: #999999;               /* 奇数列的字体颜色 */
+}
+
+/* 表格行的悬停效果 */
+#main_title table tr:hover {
+    background-color: #f1f1f1;    /* 鼠标悬停时行的背景色 */
+    cursor: pointer;              /* 鼠标悬停时显示为手形 */
+}
+
+/* 响应式设计：表格在小屏幕下可以横向滚动 */
+#main_title table-wrapper {
+    overflow-x: auto;              /* 启用横向滚动 */
+    -webkit-overflow-scrolling: touch; /* 为触摸设备提供平滑滚动效果 */
+}
+
+
+.jianjie p {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 30px;
+    text-indent: 28px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* 演艺经历 */
+#yanyijingli {
+    width: 100%;
+    text-align: center;
+}
+
+#yanyijingli img {
+    display: inline-block;
+    float: none;
+    width: 20%;
+    height:20%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+#renwusi {
+    /* float: right !important;
+    width: 200px !important; */
+    margin: 30px 0px 30px 30px;
+    text-align: right;  /* 使内容居右对齐 */
+}
+#renwusi img {
+    display: inline-block;   /* 保证图片行为像行内块元素 */
+    width: 100%;              /* 图片宽度为容器的100% */
+    height: 100%;             /* 图片高度为容器的100% */
+    margin-bottom: 30px;      /* 下边距 */
+}
+
+#yanyijingli p {
+    text-align: left;
+    font-size: 20px;
+    text-indent: 28px;
+    line-height: 30px;
+}
+
+/* 留言页面 */
+/* 留言表单样式 */
+.message-container {
+    background-color: #fff;
+    padding: 60px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-container h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #787aec;
+    color: white;
+    border: none;
+    width: 105%;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 粒子动画效果 (如果你需要粒子效果) */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffea00;
+    animation: particleAnimation 1s ease-out forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(50px, 50px);
+        opacity: 0;
+    }
+}
+
+/* movies */
+/* 动画：图片淡入 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 电影列表 */
+.header-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #140569;
+}
+
+
+
+/* 电影展示部分 */
+.movies-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.movies-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 每个“电影”卡片 */
+.movie {
+    background-color: #fff;
+    margin: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.6s ease-out;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 动画：卡片上浮 */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 电影内容样式 */
+.movie img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    animation: fadeIn 1s ease-out;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.movie-info {
+    padding: 20px;
+}
+
+.movie-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.movie-info p {
+    font-size: 20px;
+    color: #666;
+}
+
+/* 响应式调整：当屏幕较小的时候，电影卡片会自适应排列 */
+@media (max-width: 480px) {
+    .movie-list {
+        justify-content: space-around;
+    }
+
+    .movie {
+        width: 180px;
+    }
+
+    .movie-info h3 {
+        font-size: 15px;
+    }
+
+    .movie-info p {
+        font-size: 15px;
+    }
+}
+
+/* 粒子动画效果 */
+.particle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ffea00;
+    animation: particleAnimation 1s ease-out forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(100px, 100px);
+        opacity: 0;
+    }
+}
+
+/* 小动画：在页面加载时生成粒子效果 */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/21.png') center 200px;
+    background-size: cover;  /* 使背景图自适应大小 */
+    z-index: -4;
+    opacity: 0.3;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* 增加文字阴影，使文字更清晰 */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 照片墙 */
+/* 照片展示区域 */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 设置三列 */
+    grid-gap: 20px;
+    padding: 40px;
+    height: auto;
+}
+
+/* 每个照片项 */
+.photo-item {
+    position: relative;
+    width: 90%;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* 使文字在图片上悬停时显现 */
+.photo-item:hover .caption {
+    opacity: 1;
+}
+
+/* 页面底部样式 */
+footer {
+    background-color: #04589c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: -80px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕两列 */
+    }
+    .photo-item {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 2rem;
+    }
+    .photo-item {
+        width: 100%;
+        height: 150px;
+    }
+    .caption {
+        font-size: 2rem;
+    }
+}
+
+/* 登录注册界面 */
+.login-body, .register-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;  /* 保证不会超出屏幕宽度 */
+    background-color: #718cbb;  /* 页面背景色 */
+}
+
+/* 登录框容器 */
+.login-container, .register-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    width: 380px;  /* 限制宽度 */
+    max-width: 70%;  /* 保证不会超出屏幕宽度 */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    animation: fadeInBox 1s ease-out;
+}
+
+/* 登录框背景渐变样式 */
+.login-box, .register-box {
+    background: linear-gradient(145deg, #e0eaff, #ffffff);
+    padding: 60px 35px;
+    margin-left: 450px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    width: 60%;  /* 自适应父容器 */
+    text-align: center;
+    animation: fadeInBox 1s ease-out;
+}
+
+/* 登录页面的标题 */
+h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;  /* 更现代的字体 */
+    font-weight: 500;
+}
+
+/* 输入框 */
+.input-container {
+    margin: 25px 0;
+    position: center;
+}
+
+label {
+    font-size: 25px;
+    color: #555;
+    display: block;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 60%;
+    position: center;
+    padding: 14px 20px;
+    font-size: 25px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+input:focus {
+    border-color: #787aec;
+    box-shadow: 0 0 12px rgba(120, 122, 236, 0.5);
+    background-color: #fff;
+}
+
+
+/* 按钮样式 */
+.submit-btn {
+    background-color: #787aec;
+    color: #fff;
+    padding: 14px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 60%;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6b66cc;
+    transform: translateY(-3px);  /* 按钮悬停时提升效果 */
+    box-shadow: 0 4px 15px rgba(120, 122, 236, 0.3);  /* 增加按钮阴影 */
+}
+
+/* 底部链接 */
+.footer {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+}
+
+.footer a {
+    color: #787aec;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #6b66cc;  /* 更深的颜色，增加视觉层次 */
+}
+
+/* 鼠标图像 */
+.mouse-graphic {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 120px;
+    animation: mouseMove 2s infinite;
+}
+
+.mouse-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* 鼠标跳动动画 */
+@keyframes mouseMove {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 登录框渐变淡入效果 */
+@keyframes fadeInBox {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
